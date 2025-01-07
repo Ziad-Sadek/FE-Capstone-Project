@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import fetchWeatherData from './weatherAPI.js';
 import { FaSearch } from 'react-icons/fa'; 
 import './App.css';
+import backgroundImage from '';
+
 
 
 const App = () => {
@@ -10,6 +12,16 @@ const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (weatherData) {
+ 
+      document.title = `Weather in ${weatherData.name}`;
+    } else {
+
+      document.title = 'Weather Dashboard';
+    }
+  }, [weatherData]);
 
  
   const handleSearch = async () => {
