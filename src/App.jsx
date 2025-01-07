@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import fetchWeatherData from '../src/weatherAPI.js';
+import fetchWeatherData from './weatherAPI.js';
 import { FaSearch } from 'react-icons/fa';
+
 const App = () => {
 
   const [city, setCity] = useState('');
@@ -8,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Search handler
+
   const handleSearch = async () => {
     setLoading(true);
     const data = await fetchWeatherData(city);
@@ -54,6 +55,18 @@ const App = () => {
         {weatherData && (
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-blue-600">{weatherData.name}</h2>
+            
+            
+            {weatherData.weather && (
+              <div className="flex items-center justify-center mt-4">
+                <img
+                  src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+                  alt={weatherData.weather[0].description}
+                  className="w-16 h-16"
+                />
+              </div>
+            )}
+
             <div className="text-xl text-gray-700 mt-4">
               <p>Temperature: {weatherData.main.temp}°C</p>
               <p>Humidity: {weatherData.main.humidity}%</p>
