@@ -30,7 +30,7 @@ const App = () => {
       <div className="weather-card">
         <h1>Weather Dashboard</h1>
 
-        {/* Search Input and Button */}
+        
         <div className="flex mb-6">
           <input
             type="text"
@@ -43,17 +43,17 @@ const App = () => {
           </button>
         </div>
 
-        {/* Loading indicator */}
+        
         {loading && <p className="loading">Loading...</p>}
 
-        {/* Error Message */}
+        
         {error && <div className="error-message">{error}</div>}
 
-        {/* Weather Data */}
+        
         {weatherData && (
           <div className="weather-info">
             <h2>{weatherData.name}</h2>
-            {/* Weather Icon */}
+            
             {weatherData.weather && (
               <img
                 src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
