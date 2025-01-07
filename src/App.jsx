@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import fetchWeatherData from './weatherAPI.js';
-import { FaSearch } from 'react-icons/fa';
-import './App.css';
-
+import { FaSearch } from 'react-icons/fa'; 
 
 const App = () => {
 
@@ -11,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
+ 
   const handleSearch = async () => {
     setLoading(true);
     const data = await fetchWeatherData(city);
