@@ -23,5 +23,5 @@ This app fetches weather data from the OpenWeatherMap API and displays:
 
 ## 🚀 How to Run Locally:
 1. 🖥️ Clone this repository:
-https://github.com/Ziad-Sadek/weather-dashboard.git
-# weather-dashboard
+https://github.com/Ziad-Sadek/FE-Capstone-Project.git
+
