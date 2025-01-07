@@ -13,4 +13,5 @@ const fetchWeatherData = async (city) => {
   }
 };
 
+
 export default fetchWeatherData;

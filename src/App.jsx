@@ -1,26 +1,40 @@
 import React, { useState } from 'react';
-import fetchWeatherData from './weatherAPI'; // Import the function
+import fetchWeatherData from '../src'; 
 
 const App = () => {
-  const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState(null);
+  // State variables
+  const [city, setCity] = useState('');               
+  const [weatherData, setWeatherData] = useState(null); 
+  const [error, setError] = useState(null);            
 
+  // Search handler
   const handleSearch = async () => {
-    const data = await fetchWeatherData(city);
+    const data = await fetchWeatherData(city); 
     if (data) {
-      setWeatherData(data);
+      setWeatherData(data);    
+      setError(null);           
+    } else {
+      setError('City not found or network issue');
     }
   };
 
   return (
     <div>
+
       <input
         type="text"
-        value={city}
+        value={city} 
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city"
       />
+
       <button onClick={handleSearch}>Search</button>
+
+      {error && (
+        <div>
+          <p style={{ color: 'red' }}>{error}</p>
+        </div>
+      )}
 
       {weatherData && (
         <div>
