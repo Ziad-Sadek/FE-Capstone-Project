@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import fetchWeatherData from '../src'; 
+import fetchWeatherData from './weatherAPI.js';
 
 const App = () => {
   // State variables
