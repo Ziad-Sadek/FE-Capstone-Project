@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import fetchWeatherData from './weatherAPI.js';
+import fetchWeatherData from '../src/weatherAPI.js';
 import { FaSearch } from 'react-icons/fa';
 const App = () => {
 
