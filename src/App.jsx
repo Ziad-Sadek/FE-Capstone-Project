@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import fetchWeatherData from './weatherAPI.js';
 import { FaSearch } from 'react-icons/fa'; 
 import './App.css';
-import backgroundImage from '';
+
 
 
 
