@@ -1,14 +1,14 @@
-
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
+/* Body */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f1f5f9; 
+  background-color: #f1f5f9; /* Light gray background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,22 +17,19 @@ body {
   padding: 20px;
 }
 
-
-
+/* Faded Background */
 .background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('./assets/GettyImages987269142-f64f773.jpg') no-repeat center center/cover;
-
-  opacity: 0.3; 
-  z-index: -1;
+  background: linear-gradient(to right, #63b3ed, #3182ce); /* Blue gradient */
+  opacity: 0.3;
+  z-index: -1; /* Ensure it stays behind the content */
 }
 
-
-
+/* Weather Card */
 .weather-card {
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,7 +43,7 @@ body {
 
 .weather-card h1 {
   font-size: 2.5rem;
-  color: #3182ce;
+  color: #3182ce; /* Blue color */
   text-align: center;
   margin-bottom: 24px;
 }
