@@ -24,54 +24,45 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center text-blue-500 mb-6">Weather Dashboard</h1>
+    <div className="body">
+      <div className="background"></div>
 
-        <div className="flex mb-4">
+      <div className="weather-card">
+        <h1>Weather Dashboard</h1>
+
+        {/* Search Input and Button */}
+        <div className="flex mb-6">
           <input
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             placeholder="Enter city"
-            className="w-full p-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button
-            onClick={handleSearch}
-            className="p-3 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none"
-          >
+          <button onClick={handleSearch}>
             <FaSearch />
           </button>
         </div>
 
-        {loading && <p className="text-center text-blue-500">Loading...</p>}
+        {/* Loading indicator */}
+        {loading && <p className="loading">Loading...</p>}
 
-        {error && (
-          <div className="text-center text-red-500 mb-4">
-            <p>{error}</p>
-          </div>
-        )}
+        {/* Error Message */}
+        {error && <div className="error-message">{error}</div>}
 
+        {/* Weather Data */}
         {weatherData && (
-          <div className="text-center">
-            <h2 className="text-3xl font-semibold text-blue-600">{weatherData.name}</h2>
-            
-            
+          <div className="weather-info">
+            <h2>{weatherData.name}</h2>
+            {/* Weather Icon */}
             {weatherData.weather && (
-              <div className="flex items-center justify-center mt-4">
-                <img
-                  src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-                  alt={weatherData.weather[0].description}
-                  className="w-16 h-16"
-                />
-              </div>
+              <img
+                src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+                alt={weatherData.weather[0].description}
+              />
             )}
-
-            <div className="text-xl text-gray-700 mt-4">
-              <p>Temperature: {weatherData.main.temp}°C</p>
-              <p>Humidity: {weatherData.main.humidity}%</p>
-              <p>Wind Speed: {weatherData.wind.speed} km/h</p>
-            </div>
+            <p>Temperature: {weatherData.main.temp}°C</p>
+            <p>Humidity: {weatherData.main.humidity}%</p>
+            <p>Wind Speed: {weatherData.wind.speed} km/h</p>
           </div>
         )}
       </div>
