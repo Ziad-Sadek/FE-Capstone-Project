@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import fetchWeatherData from './weatherAPI.js';
-import { FaSearch } from 'react-icons/fa'; // Importing a search icon
-
+import { FaSearch } from 'react-icons/fa';
 const App = () => {
-  // State variables
+
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState(null);
@@ -28,7 +27,6 @@ const App = () => {
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold text-center text-blue-500 mb-6">Weather Dashboard</h1>
 
-        {/* Search Input and Button */}
         <div className="flex mb-4">
           <input
             type="text"
@@ -45,17 +43,14 @@ const App = () => {
           </button>
         </div>
 
-        {/* Loading indicator */}
         {loading && <p className="text-center text-blue-500">Loading...</p>}
 
-        {/* Error Message */}
         {error && (
           <div className="text-center text-red-500 mb-4">
             <p>{error}</p>
           </div>
         )}
 
-        {/* Weather Data */}
         {weatherData && (
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-blue-600">{weatherData.name}</h2>
