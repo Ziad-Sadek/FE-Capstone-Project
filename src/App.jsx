@@ -6,6 +6,7 @@ import './App.css';
 
 
 
+
 const App = () => {
 
   const [city, setCity] = useState('');
@@ -13,21 +14,13 @@ const App = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (weatherData) {
- 
-      document.title = `Weather in ${weatherData.name}`;
-    } else {
-
-      document.title = 'Weather Dashboard';
-    }
-  }, [weatherData]);
 
  
   const handleSearch = async () => {
     setLoading(true);
     const data = await fetchWeatherData(city);
     setLoading(false);
+
 
     if (data) {
       setWeatherData(data);
@@ -37,6 +30,12 @@ const App = () => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  
   return (
     <div className="body">
       <div className="background"></div>
@@ -51,6 +50,7 @@ const App = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             placeholder="Enter city"
+            onKeyDown={handleKeyDown}
           />
           <button onClick={handleSearch}>
             <FaSearch />
