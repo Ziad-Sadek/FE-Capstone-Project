@@ -49,7 +49,7 @@ const App = () => {
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            placeholder="Enter city"
+            placeholder="Enter City"
             onKeyDown={handleKeyDown}
           />
           <button onClick={handleSearch}>
