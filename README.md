@@ -17,7 +17,7 @@ This app fetches weather data from the OpenWeatherMap API and displays:
 
 ## 💻 Technologies Used:
 - ⚛️ **React**
-- 🧑‍🎨 **Tailwind CSS** (optional)
+- 🧑‍🎨 **Tailwind CSS**
 - 🌧️ **OpenWeatherMap API**
 - 💻 **JavaScript**
 
